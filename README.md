@@ -41,4 +41,20 @@
     int k = 0;
     func(&arr, &k);
 
+# 수식이 문자열(string)으로 주어지는 경우 파싱(Parsing)
+    
+    int num = 0;
+    for (int i = 0; i < s.size(); i++)
+    {
+        char c = s[i];
 
+        if (isdigit(c))
+        {
+            num = num * 10 + (c - '0');
+        }
+        else    // 연산자를 만났을 때
+        {
+            result += num;
+            num = 0;
+        }
+    }
